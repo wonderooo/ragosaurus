@@ -14,7 +14,7 @@ func NewHttpRouter() *Router {
 	}
 }
 
-func (router *Router) RegisterHandlers(handlers ...*Handler) {
+func (router *Router) RegisterHandlers(handlers []*Handler) {
 	for _, handler := range handlers {
 		router.Inner.
 			HandleFunc(handler.Path, handler.HandlerFunc).
